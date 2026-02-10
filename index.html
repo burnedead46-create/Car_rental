@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarQuick Rental - Casablanca</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">CarQuick<span>.</span></a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" data-i18n="navHome">Home</a></li>
+                    <li><a href="#fleet" data-i18n="navFleet">Fleet</a></li>
+                    <li><a href="#locations" data-i18n="navLocations">Locations</a></li>
+                    <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <select id="language-selector" class="lang-select">
+                    <option value="en">🇺🇸 English</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="ar">🇲🇦 العربية</option>
+                </select>
+                <a href="#fleet" class="btn btn-primary" data-i18n="bookNow">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1 data-i18n="heroTitle">Premium Car Rental in <span class="highlight">Morocco</span></h1>
+            <p data-i18n="heroSubtitle">Experience the freedom of the road with our diverse fleet. Best prices
+                guaranteed.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fas fa-car"></i>
+                    <span id="total-fleet-count">0</span>
+                    <p data-i18n="vehiclesAvailable">Vehicles Available</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Casablanca</span>
+                    <p data-i18n="mainHub">Main Hub</p>
+                </div>
+            </div>
+            <a href="#fleet" class="btn btn-primary btn-lg" data-i18n="browseCars">Browse Cars</a>
+        </div>
+    </section>
+
+    <!-- Booking/Availability Quick Check -->
+    <section class="booking-dock">
+        <div class="container">
+            <form id="quick-check-form" class="booking-form">
+                <div class="form-group">
+                    <label data-i18n="pickupDate">Pickup Date</label>
+                    <input type="date" id="quick-pickup" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="returnDate">Return Date</label>
+                    <input type="date" id="quick-return" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="vehicleType">Vehicle Type</label>
+                    <select id="quick-category">
+                        <option value="all" data-i18n="allCategories">All Categories</option>
+                        <option value="economy">Economy</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="luxury">Luxury</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-secondary" data-i18n="checkAvailability">Check
+                    Availability</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="section fleet-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="ourFleet">Our Fleet</h2>
+                <p data-i18n="fleetDesc">Choose from our wide range of tailored vehicles.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="fleet-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="allCategories">All</button>
+                <button class="filter-btn" data-filter="economy">Economy</button>
+                <button class="filter-btn" data-filter="sedan">Sedan</button>
+                <button class="filter-btn" data-filter="suv">SUV</button>
+                <button class="filter-btn" data-filter="luxury">Luxury</button>
+            </div>
+
+            <div id="car-grid" class="car-grid">
+                <!-- Cars will be injected here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Location / Map Section -->
+    <section id="locations" class="section map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="findUs">Find Us</h2>
+                <p data-i18n="findUsDesc">Conveniently located in the heart of Casablanca.</p>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106376.56000632669!2d-7.669818960815418!3d33.57245780183354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb11cbc8460e3dd5f!2sCasablanca%2C%20Morocco!5e0!3m2!1sen!2sus!4v1645000000000!5m2!1sen!2sus"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 data-i18n="contactUs">Contact Us</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-i18n="addressTitle">Address</h4>
+                            <p>123 Boulevard d'Anfa, Casablanca, Morocco</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4 data-i18n="phoneTitle">Phone</h4>
+                            <a href="tel:+212522000000">+212 522 00 00 00</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-i18n="emailTitle">Email</h4>
+                            <a href="mailto:contact@carquick.ma">contact@carquick.ma</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <h3 data-i18n="sendMessageTitle">Send a Message</h3>
+                    <input type="text" placeholder="Full Name" required data-i18n="fullNamePlaceholder">
+                    <input type="email" placeholder="Email Address" required data-i18n="emailPlaceholder">
+                    <textarea placeholder="Your Message" rows="5" required data-i18n="messagePlaceholder"></textarea>
+                    <button type="submit" class="btn btn-primary" data-i18n="sendMessageBtn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footerText">&copy; 2026 CarQuick Rental. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 data-i18n="bookNow">Book Your Ride</h2>
+            <div id="modal-car-details" class="modal-car-summary">
+                <!-- Selected car summary -->
+            </div>
+
+            <form id="main-booking-form">
+                <input type="hidden" id="selected-car-model">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label data-i18n="pickupDate">Pickup Date</label>
+                        <input type="date" id="book-pickup" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="returnDate">Return Date</label>
+                        <input type="date" id="book-return" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label data-i18n="pickupLocation">Pickup Location</label>
+                        <select id="book-location">
+                            <option>Casablanca Agency (Main)</option>
+                            <option>Airport CMN</option>
+                            <option>Train Station Casa Port</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="driverAge">Driver Age</label>
+                        <input type="number" id="book-age" min="18" placeholder="Age" required>
+                    </div>
+                </div>
+
+                <div class="form-group options-group">
+                    <label style="display:block; margin-bottom:10px;" data-i18n="extraOptions">Extra Options</label>
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" class="option-check" value="50"> GPS (50 MAD/day)</label>
+                        <label><input type="checkbox" class="option-check" value="40"> Baby Seat (40 MAD/day)</label>
+                        <label><input type="checkbox" class="option-check" value="100"> Full Insurance (100
+                            MAD/day)</label>
+                        <label><input type="checkbox" class="option-check" value="150"> Additional Driver (150
+                            MAD/day)</label>
+                    </div>
+                </div>
+
+                <div class="price-breakdown" id="price-breakdown">
+                    <p><span data-i18n="duration">Duration</span>: <span id="calc-duration">0</span> <span
+                            data-i18n="days">days</span></p>
+                    <p><span data-i18n="dailyRate">Daily Rate</span>: <span id="calc-daily">0</span> MAD</p>
+                    <h3><span data-i18n="total">Total</span>: <span id="calc-total">0</span> MAD</h3>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" data-i18n="confirmBooking">Confirm
+                    Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
