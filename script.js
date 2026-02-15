@@ -284,6 +284,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Set initial language if not set
     updateLanguage('en');
+
+    // Mobile Nav Listener
+    const mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav) {
+        mobileNav.addEventListener('change', (e) => {
+            const target = document.querySelector(e.target.value);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 });
 
 // Update renderFleet to use translations

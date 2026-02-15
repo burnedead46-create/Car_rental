@@ -479,8 +479,29 @@ ul {
 /* Responsive */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-between;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .mobile-nav-select {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        font-size: 16px;
+        background: white;
     }
 
     .contact-grid {
@@ -490,4 +511,13 @@ ul {
     .hero h1 {
         font-size: 32px;
     }
+
+    .header-actions {
+        gap: 10px;
+    }
+}
+
+/* Desktop Hide */
+.mobile-nav-select {
+    display: none;
 }
